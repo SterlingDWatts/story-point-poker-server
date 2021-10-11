@@ -18,13 +18,13 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
-// authentication middleware
-app.use(validateBearerToken);
-
 // basic endpoint for app.js
 app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
+
+// authentication middleware
+app.use(validateBearerToken);
 
 // error handling middleware gives short response if in production
 app.use(errorHandler);
