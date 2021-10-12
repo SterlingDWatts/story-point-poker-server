@@ -1,7 +1,7 @@
 const { NODE_ENV } = require("../config");
 const logger = require("./logger");
 
-function errorHandler(error, req, res, next) {
+const errorHandler = (error, _req, res, _next) => {
   let response;
   if (NODE_ENV === "production") {
     response = { error: { message: "server error" } };
@@ -11,6 +11,6 @@ function errorHandler(error, req, res, next) {
     response = { message: error.massage, error };
   }
   res.status(500).json(response);
-}
+};
 
 module.exports = errorHandler;
