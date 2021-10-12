@@ -6,6 +6,8 @@ const cors = require("cors");
 const validateBearerToken = require("./middleware/validate-bearer-token");
 const errorHandler = require("./middleware/error-handler");
 const { NODE_ENV } = require("./config");
+const usersRouter = require("./users/users-router");
+const authRouter = require("./auth/auth-router");
 
 // create Express app
 const app = express();
@@ -22,6 +24,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
+
+app.use("/api/users", usersRouter);
+app.use("/api/auth", authRouter);
 
 // authentication middleware
 app.use(validateBearerToken);
