@@ -21,7 +21,7 @@ app.use(helmet());
 app.use(cors());
 
 // basic endpoint for app.js
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("Hello, world!");
 });
 
