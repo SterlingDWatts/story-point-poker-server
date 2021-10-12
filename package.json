@@ -1,7 +1,10 @@
 {
-  "name": "express-boilerplate",
+  "name": "story-point-poker-server",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "16.10.0"
+  },
   "main": "index.js",
   "scripts": {
     "prettier-watch": "onchange \"**/*.js\" -- prettier --write {{changed}}",
