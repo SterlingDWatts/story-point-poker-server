@@ -1,7 +1,10 @@
 {
-  "name": "express-boilerplate",
+  "name": "story-point-poker-server",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "16.10.0"
+  },
   "main": "index.js",
   "scripts": {
     "prettier-watch": "onchange \"**/*.js\" -- prettier --write {{changed}}",
@@ -11,7 +14,8 @@
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "predeploy": "npm audit",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku main",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Sterling Watts",
@@ -39,7 +43,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.3.8",
+    "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "mocha": "^9.1.2",
     "nodemon": "^2.0.2",
